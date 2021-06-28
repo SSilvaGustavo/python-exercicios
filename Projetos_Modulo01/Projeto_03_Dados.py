@@ -17,7 +17,7 @@ play['Pontuacao2'] = 0
 play['Pontuacao3'] = 0
 play['Pontuacao4'] = 0
 
-print("\n\033[3;7m ============ BEM VINDO AO JOGO DO DADO, VAMOS TESTAR A SOLTE DE NOSSOS JOGADORES ============ \033[0;0m\n")
+print("\n\033[3;7m ============ BEM VINDO AO JOGO DO DADO, VAMOS TESTAR A SORTE DE NOSSOS JOGADORES ============ \033[0;0m\n")
 
 rodadas = int(input("\033[37;1mQuantas rodadas você deseja jogar? \033[0;0m"))
 
