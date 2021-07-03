@@ -1,27 +1,45 @@
 class Conta:
     def __init__(self, titular, saldo):
-        self.titular = titular
-        self.saldo = saldo
+        self.__titular = titular
+        self.__saldo = saldo
 
     def depositar(self, valor):
         self.saldo += valor
-        return f'''Você depositou {valor:.2f} na conta de {self.titular}
-Seu saldo atual é: R${self.saldo:.2f}'''
+        return f'''Você depositou {valor:.2f} na conta de {self.__titular}
+Seu saldo atual é: R${self.__saldo:.2f}'''
+
+
+    def __pode_sacar(self, valor_saque):
+        return self.__saldo > valor_saque
 
     def sacar(self, valor):
         if valor > 0:
-            if self.saldo < valor:
-                return f'''{self.titular} tentou sacar R${valor:.2f}
-{self.titular} seu saldo é insuficiente para sacar esse valor'''
+            if self.__pode_sacar(valor):
+                self.__saldo -= valor
+                print(f'{self.__titular} você sacou R$ {valor:.2f} com sucesso!')
             else:
-                self.saldo -= valor
-                return f'''{self.titular} sacou R${valor:.2f}
-Seu saldo atual é: R${self.saldo:.2f}'''
+                print(f'{self.__titular} você nao tem R$ {valor:.2f} para sacar.')
         else:
-            return f'{self.titular} você não pode sacar um valor negativo'
-
+            print('Você não pode sacar um valor negativo a da sua conta')
+    
     def __str__(self):
         return f'''
-        Titular: {self.titular}
-        Saldo: R${self.saldo:.2f}
+        Titular: {self.__titular}
+        Saldo: R${self.__saldo:.2f}
         '''
+
+    @property
+    def saldo(self):
+        return self.__saldo
+
+    @saldo.setter
+    def saldo(self, saldo):
+        self.__saldo = saldo
+
+    @property
+    def titular(self):
+        return self.__titular
+    
+    @titular.setter
+    def titular(self, titular):
+        self.__titular = titular
