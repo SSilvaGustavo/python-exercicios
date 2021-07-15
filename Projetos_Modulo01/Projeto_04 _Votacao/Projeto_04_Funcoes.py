@@ -125,7 +125,7 @@ class Funcoes:
         elif self.__candCont2 > self.__candCont1 and self.__candCont2 > self.__candCont3:
             print(f'{self.__cand2} [green]VENCEU AS ELEIÇÕES[/green] COM {self.__candCont2} VOTOS')
         elif self.__candCont3 > self.__candCont1 and self.__candCont3 > self.__candCont2:
-            print(f'{self.__cand2} [green]VENCEU AS ELEIÇÕES[/green] COM {self.__candCont3} VOTOS')
+            print(f'{self.__cand3} [green]VENCEU AS ELEIÇÕES[/green] COM {self.__candCont3} VOTOS')
 
     def __str__(self): #Aprensentação de todos os votos
        return f'''\nQUANTIDADES DE VOTOS
